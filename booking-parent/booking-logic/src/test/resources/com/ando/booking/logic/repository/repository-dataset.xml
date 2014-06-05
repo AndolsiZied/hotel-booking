@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+	<key id="__type__" for="node" attr.name="__type__" attr.type="string"></key>
+	<key id="firstName" for="node" attr.name="firstName" attr.type="string"></key>
+	<key id="lastName" for="node" attr.name="lastName" attr.type="string"></key>
+	<graph id="G" edgedefault="directed">
+
+		<node id="1">
+			<data key="__type__">com.ando.booking.logic.domain.entities.Guest</data>
+			<data key="firstName">Zied</data>
+			<data key="lastName">Andolsi</data>
+			<index name="__types__" key="className">com.ando.booking.logic.domain.entities.Guest</index>
+		</node>
+
+		<node id="2">
+			<data key="__type__">com.ando.booking.logic.domain.entities.Guest</data>
+			<data key="firstName">Mohamed</data>
+			<data key="lastName">Asmi</data>
+			<index name="__types__" key="className">com.ando.booking.logic.domain.entities.Guest</index>
+		</node>
+	</graph>
+</graphml>
