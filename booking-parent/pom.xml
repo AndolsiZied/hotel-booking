@@ -7,17 +7,20 @@
 	<packaging>pom</packaging>
 
 	<name>booking-parent</name>
-	<url>https://github.com/...</url>
+	<url>https://github.com/AndolsiZied/hotel-booking.git</url>
 
 	<properties>
 		<java.version>1.7</java.version>
 		<encoding>UTF-8</encoding>
-		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.core.version>4.0.3.RELEASE</spring.core.version>
 		<spring.data.version>2.1.0.RELEASE</spring.data.version>
+		<spring.boot.version>1.0.2.RELEASE</spring.boot.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<logback.version>1.0.13</logback.version>
 		<junit.version>4.11</junit.version>
 		<nosqlunit.version>0.7.10-SNAPSHOT</nosqlunit.version>
+		<guava.version>12.0</guava.version>
+		<scala.version>2.9.1</scala.version>
 	</properties>
 
 	<dependencyManagement>
@@ -26,34 +29,53 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.core.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-beans</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.core.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.core.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.core.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-neo4j</artifactId>
 				<version>${spring.data.version}</version>
 			</dependency>
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
 
 			<!-- neo4j need this -->
 			<dependency>
 				<groupId>org.scala-lang</groupId>
 				<artifactId>scala-library</artifactId>
-				<version>2.9.1</version>
+				<version>${scala.version}</version>
+			</dependency>
+
+			<!-- guava -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
 			</dependency>
 
 			<!-- Logging -->
@@ -62,24 +84,23 @@
 				<artifactId>slf4j-api</artifactId>
 				<version>${slf4j.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
 
 			<!-- Test -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.core.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>${logback.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
@@ -110,6 +131,7 @@
 
 	<modules>
 		<module>booking-logic</module>
+		<module>booking-presentation</module>
 	</modules>
 
 	<repositories>
@@ -122,4 +144,12 @@
 			<url>http://m2.neo4j.org/content/repositories/releases/org/neo4j/neo4j-cypher-dsl/</url>
 		</repository>
 	</repositories>
+
+	<developers>
+		<developer>
+			<id>zandolsi</id>
+			<name>Zied ANDOLSI</name>
+			<email>andolsi.zied@yahoo.fr</email>
+		</developer>
+	</developers>
 </project>
