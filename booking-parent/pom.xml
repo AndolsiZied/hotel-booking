@@ -22,6 +22,7 @@
 		<nosqlunit.version>0.7.10-SNAPSHOT</nosqlunit.version>
 		<guava.version>12.0</guava.version>
 		<scala.version>2.9.1</scala.version>
+		<mockito.version>1.9.5</mockito.version>
 	</properties>
 
 	<dependencyManagement>
@@ -127,6 +128,12 @@
 				<groupId>com.lordofthejars</groupId>
 				<artifactId>nosqlunit-neo4j</artifactId>
 				<version>${nosqlunit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito.version}</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
