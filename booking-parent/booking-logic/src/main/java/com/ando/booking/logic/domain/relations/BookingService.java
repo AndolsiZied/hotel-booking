@@ -9,6 +9,11 @@ import org.springframework.data.neo4j.annotation.StartNode;
 import com.ando.booking.logic.domain.entities.Booking;
 import com.ando.booking.logic.domain.entities.Service;
 
+/**
+ * BookingService entity mapping relationship between booking and service nodes.
+ * 
+ * @author Zied ANDOLSI
+ */
 @RelationshipEntity(type = "CONTAINS")
 public class BookingService {
 
@@ -20,7 +25,7 @@ public class BookingService {
 	@Fetch
 	@EndNode
 	private Service service;
-	
+
 	private int number;
 
 	public Long getId() {

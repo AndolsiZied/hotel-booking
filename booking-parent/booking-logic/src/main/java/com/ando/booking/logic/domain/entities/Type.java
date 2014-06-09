@@ -3,8 +3,14 @@ package com.ando.booking.logic.domain.entities;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.NodeEntity;
 
+/**
+ * Type entity mapping type node.
+ * 
+ * @author Zied ANDOLSI
+ */
 @NodeEntity
 public class Type {
+
 	@GraphId
 	private Long id;
 	private String type;
@@ -13,6 +19,7 @@ public class Type {
 	private int maxCapacity;
 	private String description;
 
+	// getter and setter
 	public Long getId() {
 		return id;
 	}
@@ -61,7 +68,9 @@ public class Type {
 		this.description = description;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -69,7 +78,9 @@ public class Type {
 		return result;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;

@@ -10,8 +10,14 @@ import org.springframework.data.neo4j.annotation.RelatedTo;
 import com.ando.booking.logic.domain.common.Civility;
 import com.ando.booking.logic.domain.relations.GuestBooking;
 
+/**
+ * Guest entity mapping guest node.
+ * 
+ * @author Zied ANDOLSI
+ */
 @NodeEntity
 public class Guest {
+
 	@GraphId
 	private Long id;
 	private String firstName;
@@ -31,6 +37,7 @@ public class Guest {
 		return guestBooking;
 	}
 
+	// getter and setter
 	public Long getId() {
 		return id;
 	}
@@ -95,7 +102,9 @@ public class Guest {
 		this.email = email;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -103,7 +112,9 @@ public class Guest {
 		return result;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;

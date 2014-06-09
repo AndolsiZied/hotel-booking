@@ -6,6 +6,11 @@ import java.util.Set;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.NodeEntity;
 
+/**
+ * Booking entity mapping booking node.
+ * 
+ * @author Zied ANDOLSI
+ */
 @NodeEntity
 public class Booking {
 
@@ -24,6 +29,7 @@ public class Booking {
 	private double discount;
 	private double total;
 
+	// getter and setter
 	public Long getId() {
 		return id;
 	}
@@ -128,7 +134,9 @@ public class Booking {
 		this.total = total;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -136,7 +144,9 @@ public class Booking {
 		return result;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;

@@ -3,8 +3,14 @@ package com.ando.booking.logic.domain.entities;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.NodeEntity;
 
+/**
+ * Room entity mapping room node.
+ * 
+ * @author Zied ANDOLSI
+ */
 @NodeEntity
 public class Room {
+
 	@GraphId
 	private Long id;
 	private Long number;
@@ -12,6 +18,7 @@ public class Room {
 	private Double area;
 	private boolean smoking;
 
+	// getter and setter
 	public Long getId() {
 		return id;
 	}
@@ -52,7 +59,9 @@ public class Room {
 		this.area = area;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -60,7 +69,9 @@ public class Room {
 		return result;
 	}
 
-	@Override
+	/**
+	 * {@inheritDoc}
+	 */
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
