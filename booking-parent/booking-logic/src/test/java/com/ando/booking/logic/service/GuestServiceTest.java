@@ -13,8 +13,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.neo4j.conversion.EndResult;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.data.neo4j.conversion.Handler;
+import org.springframework.data.neo4j.conversion.Result;
+import org.springframework.data.neo4j.conversion.ResultConverter;
+import org.springframework.data.neo4j.mapping.MappingPolicy;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -47,7 +51,7 @@ public class GuestServiceTest {
 	@Test
 	public void findAll() {
 		LOGGER.debug("starting test findAll method...");
-		EndResult<Guest> guests = new EndResult<Guest>() {
+		Result<Guest> guests = new Result<Guest>() {
 
 			@Override
 			public Iterator<Guest> iterator() {
@@ -57,13 +61,13 @@ public class GuestServiceTest {
 			}
 
 			@Override
-			public Guest singleOrNull() {
+			public Guest single() {
 				// TODO Auto-generated method stub
 				return null;
 			}
 
 			@Override
-			public Guest single() {
+			public Guest singleOrNull() {
 				// TODO Auto-generated method stub
 				return null;
 			}
@@ -75,16 +79,47 @@ public class GuestServiceTest {
 			}
 
 			@Override
+			public <C extends Iterable<Guest>> C as(Class<C> container) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
 			public void finish() {
 				// TODO Auto-generated method stub
 
 			}
 
 			@Override
-			public <C extends Iterable<Guest>> C as(Class<C> container) {
+			public <R> Result<R> to(Class<R> type) {
 				// TODO Auto-generated method stub
 				return null;
 			}
+
+			@Override
+			public <R> Result<R> to(Class<R> type, ResultConverter<Guest, R> resultConverter) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Result<Guest> with(MappingPolicy mappingPolicy) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Slice<Guest> slice(int page, int pageSize) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Slice<Guest> slice(Pageable page) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
 		};
 		when(guestRepository.findAll()).thenReturn(guests);
 		try {
