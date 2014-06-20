@@ -35,11 +35,10 @@
 			<artifactId>spring-data-neo4j-rest</artifactId>
 		</dependency>
 
-		<!-- neo4j need this -->
-		<dependency>
-			<groupId>org.scala-lang</groupId>
-			<artifactId>scala-library</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.validation</groupId> -->
+<!-- 			<artifactId>validation-api</artifactId> -->
+<!-- 		</dependency> -->
 
 		<!-- guava -->
 		<dependency>
@@ -73,6 +72,12 @@
 			<groupId>com.lordofthejars</groupId>
 			<artifactId>nosqlunit-neo4j</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.neo4j</groupId>
+					<artifactId>neo4j-kernel</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
